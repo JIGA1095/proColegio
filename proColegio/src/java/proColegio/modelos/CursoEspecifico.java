@@ -5,41 +5,58 @@
  */
 package proColegio.modelos;
 
+import java.sql.Date;
+
 /**
  *
  * @author Ghaos
  */
 public class CursoEspecifico {
     
-    private String cue_id;
-    private String cue_nombre;
-    private String cur_id;
+    private String ces_id;
+    private String ces_nombre;
+    private Date ces_ano;
+    private Curso ces_curso;
+    private Profesor ces_profesorjefe;
 
-    public String getCue_id() {
-        return cue_id;
+    public Date getCes_ano() {
+        return ces_ano;
     }
 
-    public void setCue_id(String cue_id) {
-        this.cue_id = cue_id;
+    public void setCes_ano(Date ces_ano) {
+        this.ces_ano = ces_ano;
     }
 
-    public String getCue_nombre() {
-        return cue_nombre;
+    public Curso getCes_curso() {
+        return ces_curso;
     }
 
-    public void setCue_nombre(String cue_nombre) {
-        this.cue_nombre = cue_nombre;
+    public void setCes_curso(Curso ces_curso) {
+        this.ces_curso = ces_curso;
     }
 
-    public String getCur_id() {
-        return cur_id;
+    public Profesor getCes_profesorjefe() {
+        return ces_profesorjefe;
     }
 
-    public void setCur_id(String cur_id) {
-        this.cur_id = cur_id;
+    public void setCes_profesorjefe(Profesor ces_profesorjefe) {
+        this.ces_profesorjefe = ces_profesorjefe;
     }
-    
-    
-    
+
+    public String getCes_id() {
+        return ces_id;
+    }
+
+    public void setCes_id(String ces_id) {
+        this.ces_id = ces_id;
+    }
+
+    public String getCes_nombre() {
+        return ces_nombre;
+    }
+
+    public void setCes_nombre(String ces_nombre) {
+        this.ces_nombre = ces_nombre;
+    }
     
 }
