@@ -33,26 +33,6 @@ public class DEF {
 
     }
 
-    public static enum LOGERROR {
-        USER("Usuario no es valido"),
-        PASS("Contraseña no es valida"),
-        BLOCK("Usuario sin privilegios para ingresar al sistema"),
-        CONNECTION("Ocurrio un problema al obtener conexion con la base de datos"),
-        USERINICIADO("Usuario con sesión iniciada"),
-        NOSESSION("No se ha iniciado sesión");
-        String value = null;
-
-        LOGERROR(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-    }
-
-
-
     public static enum SESSION {
 
         USUARIO,
@@ -63,20 +43,18 @@ public class DEF {
     }
 
     public static enum PAGINAS {
-
         LOGIN("/login"),
         PRINCIPAL("/view/principal"),
         RESET("/view/reset"),
         NEWPASS("/view/newPass"),
+        MANCURSO("/view/mantenedores/man_curso"),
+        MANPROFESORES("/view/mantenedores/man_profesores"),
         ERROR_404("/error/404"),
         ERROR_500("/error/500");
-        
         String value = null;
-
         PAGINAS(String value) {
             this.value = value;
         }
-
         public String getValue() {
             return value;
         }

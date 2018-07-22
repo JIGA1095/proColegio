@@ -15,51 +15,15 @@
             <ul class="sidebar-menu metismenu" id="sidebar-menu">
                 <li>
                     <a href="#">
-                        <i class="fa fa-sitemap"></i> Menu Levels
+                        <i class="fa fa-briefcase"></i> Mantenedores
                         <i class="fa arrow"></i>
                     </a>
                     <ul class="sidebar-nav">
                         <li>
-                            <a href="#"> Second Level Item
-                                <i class="fa arrow"></i>
-                            </a>
-                            <ul class="sidebar-nav">
-                                <li>
-                                    <a href="#"> Third Level Item </a>
-                                </li>
-                                <li>
-                                    <a href="#"> Third Level Item </a>
-                                </li>
-                            </ul>
+                            <a href="#" onclick="go('man_curso')"> Cursos </a>
                         </li>
                         <li>
-                            <a href="#"> Second Level Item </a>
-                        </li>
-                        <li>
-                            <a href="#"> Second Level Item
-                                <i class="fa arrow"></i>
-                            </a>
-                            <ul class="sidebar-nav">
-                                <li>
-                                    <a href="#"> Third Level Item </a>
-                                </li>
-                                <li>
-                                    <a href="#"> Third Level Item </a>
-                                </li>
-                                <li>
-                                    <a href="#"> Third Level Item
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav">
-                                        <li>
-                                            <a href="#"> Fourth Level Item </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Fourth Level Item </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <a href="#" onclick="go('man_profesores')"> Profesores </a>
                         </li>
                     </ul>
                 </li>
@@ -101,3 +65,5 @@
         </ul>
     </footer>
 </aside>
+
+
