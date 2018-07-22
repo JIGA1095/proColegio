@@ -12,7 +12,15 @@ package proColegio.modelos;
 public class Curso {
     private String cur_id;
     private String cur_nombre;
+    private TipoCurso cur_tipo;
 
+    public TipoCurso getCur_tipo() {
+        return cur_tipo;
+    }
+
+    public void setCur_tipo(TipoCurso cur_tipo) {
+        this.cur_tipo = cur_tipo;
+    }
     
     
     public String getCur_id() {
