@@ -53,7 +53,7 @@ public class cmd extends HttpServlet {
                 switch (to) {
 
                     case "login": {
-                        
+
                         proccesLogIn(request, response);
                         break;
                     }
@@ -68,6 +68,16 @@ public class cmd extends HttpServlet {
                     case "home": {
                         request.getSession().setAttribute("menu", "Principal");
                         toPage(DEF.PAGINAS.PRINCIPAL, request, response);
+                        break;
+                    }
+                    case "man_curso": {
+                        request.getSession().setAttribute("menu", "Mantenedor curso");
+                        toPage(DEF.PAGINAS.MANCURSO, request, response);
+                        break;
+                    }
+                    case "man_profesores": {
+                        request.getSession().setAttribute("menu", "Mantenedor profesores");
+                        toPage(DEF.PAGINAS.MANPROFESORES, request, response);
                         break;
                     }
                     default: {
