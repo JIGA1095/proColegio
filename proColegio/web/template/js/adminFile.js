@@ -180,11 +180,13 @@ function getJson(url, data, async, st_200, st_500, st_404, st_301, metod, mime) 
 ;
 
 var respuestaAjax = function (texto, tipo) {
-    Messenger.options = {theme: 'air'}, Messenger().post({
+    Messenger.options = {theme: 'future'}, Messenger().post({
         message: texto,
         type: tipo,
         showCloseButton: !0
     });
+    
+    
 };
 
 $.fn.extend({
