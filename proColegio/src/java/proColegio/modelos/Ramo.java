@@ -14,9 +14,9 @@ import java.util.ArrayList;
 public class Ramo {
     private String ram_id;
     private String ram_nombre;
-    private RamoTipo ram_tipo;
-    private ArrayList<Curso> ram_curso;
-    private boolean ram_isObligatorio;
+    private TipoRamo ram_tiporamo;
+    private TipoObligatorio ram_obligatorio;
+    private int ram_isprofejefe;
 
     public String getRam_id() {
         return ram_id;
@@ -34,28 +34,28 @@ public class Ramo {
         this.ram_nombre = ram_nombre;
     }
 
-    public RamoTipo getRam_tipo() {
-        return ram_tipo;
+    public TipoRamo getRam_tiporamo() {
+        return ram_tiporamo;
     }
 
-    public void setRam_tipo(RamoTipo ram_tipo) {
-        this.ram_tipo = ram_tipo;
+    public void setRam_tiporamo(TipoRamo ram_tiporamo) {
+        this.ram_tiporamo = ram_tiporamo;
     }
 
-    public ArrayList<Curso> getRam_curso() {
-        return ram_curso;
+    public TipoObligatorio getRam_obligatorio() {
+        return ram_obligatorio;
     }
 
-    public void setRam_curso(ArrayList<Curso> ram_curso) {
-        this.ram_curso = ram_curso;
+    public void setRam_obligatorio(TipoObligatorio ram_obligatorio) {
+        this.ram_obligatorio = ram_obligatorio;
     }
 
-    public boolean isRam_isObligatorio() {
-        return ram_isObligatorio;
+    public int getRam_isprofejefe() {
+        return ram_isprofejefe;
     }
 
-    public void setRam_isObligatorio(boolean ram_isObligatorio) {
-        this.ram_isObligatorio = ram_isObligatorio;
+    public void setRam_isprofejefe(int ram_isprofejefe) {
+        this.ram_isprofejefe = ram_isprofejefe;
     }
     
     
