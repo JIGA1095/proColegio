@@ -32,11 +32,18 @@
             document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
         }
     </script>
-    <script src="template/js/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <script src="template/js/jquery-2.1.3.min.js" ></script>
+    
+    <script src="template/js/mensajes.js" ></script>
+    <script src="template/messenger/js/messenger.min.js" ></script>
+    <script src="template/messenger/js/messenger-theme-future.js"></script>
+    <link href="template/messenger/css/messenger.css" rel="stylesheet" type="text/css"/>
+    <link href="template/messenger/css/messenger-theme-future.css" rel="stylesheet" type="text/css"/>
+    
+    
     <script src="template/js/adminFile.js"></script>
-    <link href="template/iosNotify/css/notify.css" rel="stylesheet" type="text/css"/>
-    <script src="template/iosNotify/js/ios.notify.js" type="text/javascript"></script>
-    <script src="template/js/jquery.blockUI.js" type="text/javascript"></script>
+
+    <script src="template/js/jquery.blockUI.js" ></script>
 
 </head>
 

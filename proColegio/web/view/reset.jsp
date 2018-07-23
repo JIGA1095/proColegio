@@ -35,7 +35,11 @@
         </script>
         <script src="template/js/jquery.blockUI.js" type="text/javascript"></script>
         <script src="template/js/adminFile.js" type="text/javascript"></script>
-        <script src="template/js/mensajes.js" type="text/javascript"></script>
+        <script src="template/js/mensajes.js" ></script>
+        <script src="template/messenger/js/messenger.min.js" ></script>
+        <script src="template/messenger/js/messenger-theme-future.js"></script>
+        <link href="template/messenger/css/messenger.css" rel="stylesheet" type="text/css"/>
+        <link href="template/messenger/css/messenger-theme-future.css" rel="stylesheet" type="text/css"/>
 
 
 
@@ -67,76 +71,70 @@
                 </div>
             </div>
         </div>
-        <!--<script src="template/js/vendor.js"></script>-->
-        <!--<script src="template/js/app.js"></script>-->
-        <link href="template/iosNotify/css/notify.css" rel="stylesheet" type="text/css"/>
-        <script src="template/iosNotify/js/ios.notify.js" type="text/javascript"></script>
     </body>
 
 
     <script>
 
-                                    $(function () {
-                                        $(document).ajaxStop($.unblockUI);
+        $(function () {
+            $(document).ajaxStop($.unblockUI);
 
-                                    });
-                                    function resetPass() {
-                                        iniciarAjax();
-                                        $.ajax({
-                                            url: 'usuario',
-                                            type: 'POST',
-                                            dataType: 'json',
-                                            data: {
-                                                accion: 'reset',
-                                                usuario: $("#usuario").val()
-                                            }, success: function (data, textStatus, jqXHR) {
-                                                console.log(data.estado);
+        });
+        function resetPass() {
+            iniciarAjax();
+            $.ajax({
+                url: 'usuario',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    accion: 'reset',
+                    usuario: $("#usuario").val()
+                }, success: function (data, textStatus, jqXHR) {
+                    switch (data.estado) {
 
-                                                switch (data.estado) {
+                        case 404:
+                            $("#usuarioGroup").find('span').remove()
+                            $("#usuarioGroup").addClass("has-error");
+                            $("#usuarioGroup").append("<span class='has-error' id='error'>Usuario no exite en sistema.</span>");
+                            $('#cardID').animateCss('shake', function () {
+                                $('#cardID').removeClass('animated shake');
+                            });
+                            break;
 
-                                                    case 404:
-                                                        $("#usuarioGroup").find('span').remove()
-                                                        $("#usuarioGroup").addClass("has-error");
-                                                        $("#usuarioGroup").append("<span class='has-error' id='error'>Usuario no exite en sistema.</span>");
-                                                        $('#cardID').animateCss('shake', function () {
-                                                            $('#cardID').removeClass('animated shake');
-                                                        });
-                                                        break;
+                        case 0:
+                            $("#usuarioGroup").find('span').remove()
+                            $("#usuarioGroup").addClass("has-error");
+                            $("#usuarioGroup").append("<span class='has-error' id='error'>Usuario bloqueado por sistema.</span>");
+                            $('#cardID').animateCss('shake', function () {
+                                $('#cardID').removeClass('animated shake');
+                            });
+                            break;
+                        case 99:
+                            $("#usuarioGroup").find('span').remove()
+                            $("#usuarioGroup").addClass("has-error");
+                            $("#usuarioGroup").append("<span class='has-error' id='error'>Error al cambiar clave.</span>");
+                            $('#cardID').animateCss('shake', function () {
+                                $('#cardID').removeClass('animated shake');
+                            });
+                            break;
+                        case 3:
+                            respuestaAjax("Nueva contrase&ntilde;a generada", "success")
+                            $("#btnENV").hide();
+                            $("#usuarioGroup").find('span').remove()
+                            $("#usuarioGroup").addClass("has-success");
+                            $("#usuarioGroup").append("<span class='has-success' id='error'>Cambio correcto de contraseña.</span>");
+                            $('#cardID').animateCss('pulse', function () {
+                                $('#cardID').removeClass('animated pulse');
+                            });
+                            break;
 
-                                                    case 0:
-                                                        $("#usuarioGroup").find('span').remove()
-                                                        $("#usuarioGroup").addClass("has-error");
-                                                        $("#usuarioGroup").append("<span class='has-error' id='error'>Usuario bloqueado por sistema.</span>");
-                                                        $('#cardID').animateCss('shake', function () {
-                                                            $('#cardID').removeClass('animated shake');
-                                                        });
-                                                        break;
-                                                    case 99:
-                                                        $("#usuarioGroup").find('span').remove()
-                                                        $("#usuarioGroup").addClass("has-error");
-                                                        $("#usuarioGroup").append("<span class='has-error' id='error'>Error al cambiar clave.</span>");
-                                                        $('#cardID').animateCss('shake', function () {
-                                                            $('#cardID').removeClass('animated shake');
-                                                        });
-                                                        break;
-                                                    case 3:
-                                                        notificacion("Aviso", "Cambio de contrase&natilde;a correcto")
-                                                        $("#btnENV").hide();
-                                                        $("#usuarioGroup").find('span').remove()
-                                                        $("#usuarioGroup").addClass("has-success");
-                                                        $("#usuarioGroup").append("<span class='has-success' id='error'>Cambio correcto de contraseña.</span>");
-                                                        $('#cardID').animateCss('pulse', function () {
-                                                            $('#cardID').removeClass('animated pulse');
-                                                        });
-                                                        break;
+                    }
 
-                                                }
+                }, error: function (error) {
+                    respuestaAjax("Error al guardar, contacte con proveedor", "error")
+                }
+            });
 
-                                            }, error: function (error) {
-                                                respuestaAjax("Error al guardar, contacte con proveedor", "error")
-                                            }
-                                        });
-
-                                    }
+        }
     </script>
 </html>

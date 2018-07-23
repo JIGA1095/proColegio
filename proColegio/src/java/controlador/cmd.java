@@ -5,7 +5,6 @@
  */
 package controlador;
 
-import BBDD.CONN;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
@@ -18,7 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
-import org.json.JSONObject;
 import proColegio.beans.BNUsuario;
 import proColegio.modelos.Usuario;
 import utilidades.DEF;

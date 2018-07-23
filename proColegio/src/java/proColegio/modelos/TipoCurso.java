@@ -13,6 +13,11 @@ public class TipoCurso {
     private String tcu_id;
     private String tcu_descripcion;
 
+    public TipoCurso(String tcu_id, String tcu_descripcion) {
+        this.tcu_id = tcu_id;
+        this.tcu_descripcion = tcu_descripcion;
+    }
+
     public String getTcu_id() {
         return tcu_id;
     }

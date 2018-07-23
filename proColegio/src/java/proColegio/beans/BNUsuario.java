@@ -27,12 +27,11 @@ public class BNUsuario extends Request {
 
     public Usuario login(String usuario, String clave) throws SQLException, UnknownHostException {
         Usuario user = null;
-        Connection cn = null;
-        Statement stmt = null;
-        ResultSet rs = null;
-        String sql = "";
+        Connection cn;
+        Statement stmt;
+        ResultSet rs;
         cn = CONN.getConn();
-        sql = "select usu_id, usu_nombre, usu_apellido,usu_password,usu_estado from " + BBDD.CONN.ESQUEMA_OP + "usuarios\n"
+        String sql = "select usu_id, usu_nombre, usu_apellido,usu_password,usu_estado from " + BBDD.CONN.ESQUEMA_OP + "usuarios\n"
                 + "where usu_usuario = '" + usuario + "'";
         try {
             stmt = cn.createStatement();
